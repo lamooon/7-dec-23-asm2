@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-dep
+  labels:
+    app: mysql
+    tier: database
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+      tier: database
+  template:
+    metadata:
+      labels:
+        app: mysql
+        tier: database
+    spec:
+      containers:
+        - name: mysql
+          image: lamooon/mysql #can't pull mysql:5.7 since this is M2 Mac
+          ports:
+          - containerPort: 3306
+          volumeMounts:
+          - name: mysql-persistent-storage
+            mountPath: /var/lib/mysql
+          env:
+          - name: MYSQL_USER
+            value: MYSQL_USER
+          - name: MYSQL_PASSWORD
+            value: MYSQL_PASSWORD
+          - name: MYSQL_ROOT_PASSWORD
+            value: MYSQL_ROOT_PASSWORD
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pvc
+      
+
