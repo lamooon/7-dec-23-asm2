@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-server
+spec:
+  selector:
+    matchLabels:
+      app: api-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - name: api-server
+        image: lamooon/app-api
+        ports:
+        - containerPort: 5050
+        env:
+          - name: DB_HOST
+            value: MYSQL_HOST
+          - name: DB_PASSWORD
+            value: MYSQL_ROOT_PASSWORD
