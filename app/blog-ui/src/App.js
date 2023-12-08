@@ -16,7 +16,7 @@ const CreatePost = ({ onPost }) => {
     e.preventDefault();
 
     axios
-      .post('/api/posts', {
+      .post('api-server/src/api/posts', {
         title: e.target.title.value,
         body: e.target.body.value
       })
@@ -48,7 +48,7 @@ const App = () => {
 
   const fetchPosts = () => {
     axios
-      .get('/api/posts')
+      .get('api-server/src/api/posts')
       .then(res => {
         setPosts(res.data);
       });

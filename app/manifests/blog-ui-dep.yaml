@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blog-ui-dep
+  name: ui
 spec:
   selector:
     matchLabels:
-      app: blog-ui-dep
+      app: ui
   replicas: 1
   template:
     metadata:
       labels:
-        app: blog-ui-dep
+        app: ui
     spec:
       containers:
-      - name: blog-ui-dep
+      - name: ui
         image: lamooon/app-ui
         imagePullPolicy: Always
         
         ports:
-        - containerPort: 80
+        - containerPort: 3000

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: blog-ui-svc
+  name: ui
 spec:
   selector:
-    app: blog-ui-dep
+    app: ui
   ports:
   - port: 3000
     protocol: TCP
