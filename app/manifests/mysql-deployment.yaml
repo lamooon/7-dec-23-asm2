@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: arm64v8/mysql
+          image: mysql:8.0.35
           ports:
           - containerPort: 3306
           volumeMounts:
