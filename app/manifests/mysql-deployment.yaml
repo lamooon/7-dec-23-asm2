@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: lamooon/mysql #can't pull mysql:5.7 since this is M2 Mac
+          image: arm64v8/mysql
           ports:
           - containerPort: 3306
           volumeMounts:
