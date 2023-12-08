@@ -18,9 +18,9 @@ spec:
         ports:
         - containerPort: 5050
         env:
-          - name: MYSQL_HOST
-            value: localhost
-          - name: MYSQL_DATABASE
-            value: blog
-          - name: MYSQL_ROOT_PASSWORD
-            value: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_HOST
+          value: mysql
+        - name: MYSQL_DATABASE
+          value: blog
+        - name: MYSQL_ROOT_PASSWORD
+          value: root1234

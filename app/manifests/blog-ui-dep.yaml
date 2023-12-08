@@ -16,6 +16,5 @@ spec:
       - name: ui
         image: lamooon/app-ui
         imagePullPolicy: Always
-        
         ports:
         - containerPort: 3000

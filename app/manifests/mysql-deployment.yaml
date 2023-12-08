@@ -25,16 +25,10 @@ spec:
           - name: mysql-persistent-storage
             mountPath: /var/lib/mysql
           env:
-          - name: MYSQL_USER
-            value: MYSQL_USER
-          - name: MYSQL_PASSWORD
-            value: MYSQL_PASSWORD
           - name: MYSQL_ROOT_PASSWORD
-            value: MYSQL_ROOT_PASSWORD
+            value: root1234
           - name: MYSQL_DATABASE
             value: blog
-          - name: MYSQL_HOST
-            value: localhost
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:

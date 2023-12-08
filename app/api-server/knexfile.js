@@ -6,7 +6,7 @@ module.exports = {
     client: 'mysql2',
     connection: {
       // "db" refers to the name of the service in docker-compose
-      host: 'db',
+      host: 'mysql',
       // Environment variables are defined in the api service in docker-compose
       user: process.env.MYSQL_USER,
       password: process.env.MYSQL_PASSWORD,
