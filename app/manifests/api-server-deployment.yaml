@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api-server
-        image: lamooon/app-api
+        image: lamooon/back
         ports:
         - containerPort: 5050
         env:
